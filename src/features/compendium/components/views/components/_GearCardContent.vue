@@ -39,6 +39,12 @@
         </v-col>
       </v-row>
       <p
+        v-if="item.Effect"
+        class="card-effect pa-2 mb-1"
+        style="font-size: 15px"
+        v-html-safe="item.Effect"
+      />
+      <p
         v-if="item.Description"
         v-html-safe="item.Description"
         class="card-effect pa-2 mb-1"
