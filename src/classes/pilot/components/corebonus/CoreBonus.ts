@@ -8,7 +8,6 @@ import { IDeployableData } from '../../../components/feature/deployable/Deployab
 
 interface ICoreBonusData extends ICompendiumItemData {
   source: string
-  effect: string
   mounted_effect?: string
   actions?: IActionData[]
   bonuses?: IBonusData[]
@@ -21,13 +20,11 @@ interface ICoreBonusData extends ICompendiumItemData {
 
 class CoreBonus extends CompendiumItem {
   public readonly Source: string
-  public readonly Effect: string
   public readonly MountedEffect: string
 
   public constructor(data?: ICoreBonusData, packTags?: ITagCompendiumData[], packName?: string) {
     super(data, packTags, packName)
     this.Source = data.source.toUpperCase()
-    this.Effect = data.effect
     this.MountedEffect = data.mounted_effect || ''
     this.ItemType = ItemType.CoreBonus
   }

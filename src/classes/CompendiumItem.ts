@@ -11,6 +11,7 @@ interface ICompendiumItemData {
   id: string
   name: string
   description: string
+  effect?: string
   actions?: IActionData[]
   bonuses?: IBonusData[]
   synergies?: ISynergyData[]
@@ -42,6 +43,7 @@ abstract class CompendiumItem {
   private _baseTags: Tag[]
   protected _name: string
   protected _description: string
+  protected _effect: string
   protected _note: string
   protected _flavor_name: string
   protected _flavor_description: string
@@ -61,6 +63,7 @@ abstract class CompendiumItem {
       this._flavor_name = ''
       this._description = data.description || ''
       this._flavor_description = data.description || ''
+      this._effect = data.effect || ''
       this.Brew = data.brew || 'Core'
       this.LcpName = packName || 'LANCER Core Book'
       this.InLcp = packName ? true : false
@@ -122,6 +125,15 @@ abstract class CompendiumItem {
 
   public set Description(val: string) {
     this._flavor_description = val
+    this.save()
+  }
+
+  public get Effect(): string {
+    return this._effect
+  }
+
+  public set Effect(val: string) {
+    this._effect = val
     this.save()
   }
 

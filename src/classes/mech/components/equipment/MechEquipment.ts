@@ -4,7 +4,6 @@ import { ILicensedItemData, ITagCompendiumData, ITagData } from '../../../../int
 interface IMechEquipmentData extends ILicensedItemData {
   sp: number
   tags: ITagData[]
-  effect: string
   talent_item?: boolean
   frame_id?: boolean
   // TODO: expand
@@ -23,7 +22,6 @@ abstract class MechEquipment extends LicensedItem {
   protected max_use_override: number
   private _max_uses: number
   public readonly SP: number
-  public readonly Effect: string
   public readonly IsIntegrated: boolean
   public readonly IsUnique: boolean
   public readonly IsLimited: boolean
@@ -43,7 +41,6 @@ abstract class MechEquipment extends LicensedItem {
   public constructor(data: IMechEquipmentData, packTags?: ITagCompendiumData[], packName?: string) {
     super(data, packTags, packName)
     this.SP = parseInt(data.sp as any) || 0
-    this.Effect = data.effect
     this.IsIntegrated = data.talent_item || data.frame_id || data.id.includes('_integrated')
     this._destroyed = false
     this._cascading = false

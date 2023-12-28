@@ -17,7 +17,6 @@ abstract class PilotEquipment extends CompendiumItem {
   protected max_use_override: number
   private _max_uses: number
   public readonly SP: number
-  public readonly Effect: string
   public readonly IsIntegrated: boolean
   public readonly IsUnique: boolean
   public readonly IsLimited: boolean

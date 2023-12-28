@@ -70,7 +70,6 @@ interface IWeaponProfileData {
 class WeaponProfile extends CompendiumItem {
   Damage?: Damage[]
   Range?: Range[]
-  Effect?: string
   OnAttack?: string
   OnHit?: string
   OnCrit?: string
@@ -93,7 +92,6 @@ class WeaponProfile extends CompendiumItem {
     this.Skirmish = pData.skirmish != undefined ? pData.skirmish : container.Skirmish
     if (pData.damage) this.Damage = pData.damage.map(x => new Damage(x))
     if (pData.range) this.Range = pData.range.map(x => new Range(x))
-    if (pData.effect) this.Effect = pData.effect
     if (pData.on_attack) this.OnAttack = pData.on_attack
     if (pData.on_hit) this.OnHit = pData.on_hit
     if (pData.on_crit) this.OnCrit = pData.on_crit
