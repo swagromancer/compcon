@@ -1,5 +1,20 @@
 # COMP/CON Changelog
 
+## [2.3.21] (2024-03-20)
+
+### Bug Fixes
+
+- **Global** Minor updates and corrections to the new themes
+
+## [2.3.20] (2024-03-11)
+
+### Features
+
+- **Global** Incredible new themes with tons of flavor! Huge thanks to vialra, Asger Toft, and thecrystalwoods!
+- **NPC Roster** nimoooos added an excellent NPC statblock exporter
+- **Equipment** vialra also cleaned up a bit of redundant code in equipment classes
+- **Cloud** Subdomains are now correctly handled (thanks liam-edwards!)
+
 ## [2.3.19b] (2023-10-13)
 
 ### Bug Fixes
